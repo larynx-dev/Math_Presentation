@@ -1,0 +1,183 @@
+/* ============================================ MATHEMATICS PROBLEM SET — styles
+   Classical, textbook-like: paper, serif type, hairline rules, graph-paper grid.
+   Every colour is mixed from --accent (set per slide in index.html via data-accent),
+   and --accent is a registered colour, so the whole page fades between slides. */
+@property --accent{syntax:'<color>';inherits:true;initial-value:#8a3b2e}
+:root{
+  --accent:#8a3b2e;
+  transition:--accent 1s ease;
+  --paper:color-mix(in srgb,var(--accent) 5%,#f7f3ea);
+  --paper2:color-mix(in srgb,var(--accent) 9%,#efe9dc);
+  --ink:color-mix(in srgb,var(--accent) 12%,#1d1b18);
+  --soft:color-mix(in srgb,var(--accent) 14%,#45413a);
+  --muted:color-mix(in srgb,var(--accent) 22%,#7d766b);
+  --rule:color-mix(in srgb,var(--accent) 28%,rgba(60,50,35,.28));
+  --hair:color-mix(in srgb,var(--accent) 16%,rgba(60,50,35,.16));
+  --ease:cubic-bezier(.2,.7,.2,1);
+  --pad-x:clamp(24px,6vw,104px);
+  --f-display:"Cormorant Garamond","EB Garamond",Georgia,serif;
+  --f-body:"EB Garamond",Georgia,"Times New Roman",serif;
+  --f-math:"STIX Two Text","Cambria Math","Times New Roman",serif;
+}
+*{box-sizing:border-box}
+html,body{margin:0;height:100%;background:var(--paper);color:var(--ink);font-family:var(--f-body);overflow:hidden;-webkit-font-smoothing:antialiased}
+button{font:inherit;color:inherit}
+
+/* ----------------------------------------------------------- the paper */
+.paper{position:fixed;inset:0;background:
+  radial-gradient(120% 90% at 50% 40%,var(--paper) 55%,var(--paper2) 100%)}
+.grid{position:fixed;inset:0;pointer-events:none;
+  background-image:
+    linear-gradient(var(--hair) 1px,transparent 1px),linear-gradient(90deg,var(--hair) 1px,transparent 1px),
+    linear-gradient(color-mix(in srgb,var(--accent) 7%,transparent) 1px,transparent 1px),linear-gradient(90deg,color-mix(in srgb,var(--accent) 7%,transparent) 1px,transparent 1px);
+  background-size:140px 140px,140px 140px,28px 28px,28px 28px;background-position:-1px -1px;
+  -webkit-mask:radial-gradient(85% 75% at 50% 50%,rgba(0,0,0,.55) 20%,transparent 100%);mask:radial-gradient(85% 75% at 50% 50%,rgba(0,0,0,.55) 20%,transparent 100%)}
+
+/* ---------------------------------------------------- running head/foot */
+.top,.bottom{position:fixed;left:var(--pad-x);right:var(--pad-x);z-index:10;display:flex;align-items:center;gap:28px}
+.top{top:0;height:76px;justify-content:space-between;border-bottom:1px solid var(--hair)}
+.running{font:500 15px var(--f-body);letter-spacing:.16em;text-transform:uppercase;color:var(--soft)}
+.running em{text-transform:none;letter-spacing:.02em;font-size:17px;color:var(--accent)}
+.running span,.hint span{color:var(--muted);margin:0 .3em}
+.hint{display:flex;align-items:center;gap:5px;font-size:15px;color:var(--muted);white-space:nowrap}
+.hint em{margin-right:2px}
+kbd{display:inline-grid;place-items:center;min-width:22px;height:22px;padding:0 5px;border:1px solid var(--rule);border-radius:3px;font:500 12px var(--f-math);color:var(--ink);background:var(--paper)}
+.bottom{bottom:0;height:92px;border-top:1px solid var(--hair)}
+.folio{display:flex;align-items:baseline;gap:8px;min-width:74px;font:500 34px/1 var(--f-display);color:var(--ink);font-variant-numeric:lining-nums}
+.folio .of{font:italic 15px var(--f-body);color:var(--muted)}
+.progress{flex:1;display:flex;align-items:center;gap:0;height:28px}
+.progress button{all:unset;cursor:pointer;flex:1;height:28px;position:relative}
+.progress button::before{content:"";position:absolute;left:0;right:0;top:13px;height:1px;background:var(--rule);transition:background .3s,height .3s,top .3s}
+.progress button::after{content:"";position:absolute;right:-3px;top:10px;width:5px;height:5px;border:1px solid var(--muted);border-radius:50%;background:var(--paper);transition:background .3s,border-color .3s}
+.progress button.done::before,.progress button.on::before{background:var(--accent)}
+.progress button.on::before{height:2px;top:12.5px}
+.progress button.done::after,.progress button.on::after{background:var(--accent);border-color:var(--accent)}
+.progress span{position:absolute;bottom:26px;left:0;font:italic 14px var(--f-body);color:var(--soft);white-space:nowrap;opacity:0;transform:translateY(4px);transition:.2s;pointer-events:none}
+.progress button:hover span{opacity:1;transform:none}
+.ansdots{display:flex;align-items:center;gap:7px;min-width:110px;font:italic 14px var(--f-body);color:var(--muted);transition:opacity .3s}
+.ansdots:empty{opacity:0}
+.ansdots i{width:8px;height:8px;border:1px solid var(--muted);border-radius:50%;transition:background .25s,border-color .25s}
+.ansdots i.on{background:var(--accent);border-color:var(--accent)}
+.nav{display:flex;gap:10px}
+.nav button{width:46px;height:46px;display:grid;place-items:center;cursor:pointer;border:1px solid var(--rule);border-radius:50%;background:transparent;color:var(--ink);transition:background .25s,color .25s,border-color .25s,transform .15s}
+.nav button svg{width:20px;height:20px}
+.nav button:hover:not(:disabled){border-color:var(--accent);color:var(--accent)}
+.nav #next{background:var(--accent);color:var(--paper);border-color:var(--accent)}
+.nav #next:hover:not(:disabled){color:var(--paper)}
+.nav button:disabled{opacity:.3;cursor:default}
+.nav button.hit{transform:scale(.92)}
+
+/* -------------------------------------------------------------- slides */
+#deck{position:fixed;inset:0}
+.slide{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:center;gap:clamp(18px,3.4vh,34px);
+  padding:104px var(--pad-x) 116px;opacity:0;visibility:hidden;pointer-events:none;transition:opacity .5s,visibility 0s .5s}
+.slide.is-active{opacity:1;visibility:visible;pointer-events:auto;transition:opacity .5s}
+.rv{opacity:0;transform:translate3d(0,14px,0)}
+.is-active .rv{opacity:1;transform:none;transition:opacity .8s var(--ease) calc(200ms + var(--i)*110ms),transform 1s var(--ease) calc(200ms + var(--i)*110ms)}
+.is-leaving .rv{opacity:0;transition:opacity .3s}
+
+.kicker{margin:0 0 6px;font:500 15px var(--f-body);letter-spacing:.2em;text-transform:uppercase;color:var(--accent)}
+.kicker span{color:var(--muted);margin:0 .35em}
+
+.h{margin:0;font:500 clamp(40px,min(4.6vw,8vh),76px)/1.04 var(--f-display);letter-spacing:-.005em;color:var(--ink)}
+.h em{font-style:italic;color:var(--accent)}
+.h .ln{display:inline-block;overflow:hidden;vertical-align:bottom;padding-bottom:.14em;margin-bottom:-.14em}
+.h .ln>span{display:inline-block;transform:translateY(105%)}
+.is-active .h .ln>span{transform:none;transition:transform 1.1s var(--ease) calc(100ms + var(--d)*120ms)}
+.h.big{font-size:clamp(56px,min(6.6vw,13vh),124px);line-height:.98}
+.h.big .ln{display:block;width:max-content;padding-right:.08em}
+
+/* ---------------------------------------------------------- title page */
+.title{flex-direction:row;align-items:center;justify-content:space-between;gap:6vw}
+.intro{flex:0 1 auto;min-width:0}
+.intro .sub{max-width:600px}
+.intro .h{margin:6px 0 18px}
+.sub{margin:0 0 30px;font:italic 400 clamp(18px,1.5vw,23px)/1.45 var(--f-body);color:var(--soft)}
+.toc{list-style:none;margin:0;padding:0;max-width:430px;border-top:1px solid var(--rule)}
+.toc li{display:flex;align-items:baseline;gap:12px;padding:9px 0;border-bottom:1px solid var(--hair);font-size:clamp(17px,1.35vw,21px)}
+.toc i{width:34px;font-style:normal;color:var(--accent)}
+.toc b{flex:1;border-bottom:1px dotted var(--muted);transform:translateY(-5px)}
+.toc u{text-decoration:none;font-style:italic;color:var(--muted);font-variant-numeric:oldstyle-nums}
+
+.plate{flex:none;width:min(36vw,58vh);margin:0 2vw 0 0}
+.plate svg{display:block;width:100%;height:auto;overflow:visible}
+.plate .axes path,.plate .ticks path{fill:none;stroke:var(--soft);stroke-width:1.1}
+.plate .draw{fill:none;stroke-dasharray:1;stroke-dashoffset:1}
+.plate .curve{stroke:var(--accent);stroke-width:2.2}
+.plate .tangent{stroke:var(--ink);stroke-width:1.1}
+.plate .guide{stroke:var(--muted);stroke-width:1;stroke-dasharray:.012 .012;stroke-dashoffset:0;opacity:0}
+.plate .pt{fill:var(--paper);stroke:var(--accent);stroke-width:2;opacity:0}
+.plate .lbl{font:400 19px var(--f-math);fill:var(--ink)}
+.plate .lbl.sm{font-size:15px;fill:var(--soft)}
+.plate text{opacity:0}
+.is-active .plate .curve{stroke-dashoffset:0;transition:stroke-dashoffset 1.8s var(--ease) .5s}
+.is-active .plate .tangent{stroke-dashoffset:0;transition:stroke-dashoffset 1.2s var(--ease) 1.5s}
+.is-active .plate .guide,.is-active .plate .pt,.is-active .plate text{opacity:1;transition:opacity .8s 2.1s}
+figcaption{margin-top:14px;padding-top:10px;border-top:1px solid var(--hair);font:italic 15px var(--f-body);color:var(--muted);text-align:center}
+
+/* ------------------------------------------------------- problem pages */
+.pair{display:grid;grid-template-columns:1fr 1px 1fr;gap:0 clamp(26px,3.6vw,60px);min-height:0}
+.pair::before{content:"";grid-column:2;grid-row:1;background:linear-gradient(transparent,var(--rule) 15%,var(--rule) 85%,transparent)}
+.prob{display:grid;grid-template-rows:auto auto 1fr auto;padding-top:16px;border-top:1px solid var(--rule);cursor:pointer;grid-row:1}
+.prob:first-child{grid-column:1}.prob:last-child{grid-column:3}
+.prob h3{margin:0 0 8px;font:400 clamp(20px,1.65vw,26px)/1.25 var(--f-body);color:var(--ink)}
+.prob h3 b{font-weight:600;font-variant:small-caps;letter-spacing:.04em;color:var(--accent)}
+.prob h3 em{color:var(--soft)}
+.task{margin:0;font-size:clamp(18px,1.45vw,23px);line-height:1.45;color:var(--soft)}
+.task .m{color:var(--ink)}
+.math{display:grid;place-items:center;min-height:clamp(96px,17vh,170px);padding:clamp(8px,1.8vh,20px) 0;font-size:clamp(26px,2.5vw,42px);color:var(--ink)}
+
+/* solution: its space is always reserved, so revealing it never moves anything */
+.ans{position:relative;padding:14px 18px 12px;border-left:2px solid var(--hair);background:color-mix(in srgb,var(--accent) 4%,transparent);
+  min-height:clamp(124px,19vh,172px);transition:border-color .4s,background .4s}
+.ans>*{opacity:0;transform:translateY(6px);transition:opacity .4s,transform .5s var(--ease)}
+.ans::after{content:"press ↓ to reveal the solution";position:absolute;inset:0;display:grid;place-items:center;font:italic 16px var(--f-body);color:var(--muted);transition:opacity .3s}
+.prob.open .ans{border-left-color:var(--accent);background:color-mix(in srgb,var(--accent) 7%,transparent)}
+.prob.open .ans>*{opacity:1;transform:none}
+.prob.open .ans>:nth-child(2){transition-delay:.07s}.prob.open .ans>:nth-child(3){transition-delay:.14s}.prob.open .ans>:nth-child(4){transition-delay:.21s}
+.prob.open .ans::after{opacity:0}
+.alabel{display:block;margin-bottom:4px;font:italic 600 clamp(16px,1.25vw,19px) var(--f-body);color:var(--accent)}
+.step{margin:0 0 3px;font-size:clamp(16px,1.3vw,20px);line-height:1.45;color:var(--soft)}
+.step .m{color:var(--ink)}
+.res{margin:6px 0 0;font-size:clamp(22px,1.9vw,31px);color:var(--accent)}
+.res.two{display:flex;flex-wrap:wrap;gap:6px 38px;margin:2px 0 8px}
+
+/* ---------------------------------------------------- math typesetting */
+.m{font-family:var(--f-math);white-space:nowrap}
+.m i{font-style:italic}
+sup{font-size:.62em;line-height:0;vertical-align:.62em;margin-left:.04em}
+.par{font-size:1.3em;line-height:0;vertical-align:-.06em}
+.int{display:inline-flex;align-items:center;margin-right:.12em;vertical-align:middle}
+.int .sign{font-size:1.9em;line-height:1;font-style:normal;transform:translateY(-.03em)}
+.int.sm .sign{font-size:1.35em}
+.int .lim{display:inline-flex;flex-direction:column;justify-content:space-between;height:2.2em;margin-left:-.05em;font-size:.55em;line-height:1}
+.int .lim span:first-child{transform:translate(.35em,-.3em)}
+.int .lim span:last-child{transform:translate(-.1em,.35em)}
+.frac{display:inline-flex;flex-direction:column;align-items:center;vertical-align:middle;margin:0 .15em;font-size:.78em;line-height:1.15}
+.frac>span:first-child{padding:0 .2em .06em;border-bottom:.06em solid currentColor}
+.frac>span:last-child{padding-top:.06em}
+.mat{position:relative;display:inline-grid;grid-template-columns:repeat(2,auto);column-gap:.75em;row-gap:.05em;padding:.12em .55em;margin:0 .1em;
+  vertical-align:middle;text-align:center;line-height:1.15;font-size:.9em}
+.mat span{min-width:.9em}
+.mat::before,.mat::after{content:"";position:absolute;top:0;bottom:0;width:.32em;border:.065em solid currentColor}
+.mat::before{left:0;border-right:0;border-radius:.6em 0 0 .6em/50% 0 0 50%}
+.mat::after{right:0;border-left:0;border-radius:0 .6em .6em 0/0 50% 50% 0}
+
+/* ---------------------------------------------------------- responsive */
+@media (max-height:780px){
+  .slide{padding-top:84px;padding-bottom:100px}
+  .top{height:64px}
+  .bottom{height:84px}
+}
+@media (max-width:900px){
+  .hint,.progress{display:none}
+  .slide{justify-content:flex-start;overflow-y:auto;padding-top:84px}
+  .title{flex-direction:column;align-items:flex-start}
+  .plate{width:70vw;margin:10px auto}
+  .pair{grid-template-columns:1fr;gap:28px}
+  .pair::before{display:none}
+  .prob:first-child,.prob:last-child{grid-column:1;grid-row:auto}
+}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{transition-duration:.01ms!important;transition-delay:0s!important}
+}

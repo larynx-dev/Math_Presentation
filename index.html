@@ -1,0 +1,196 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mathematical Problems</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500;1,600&family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=STIX+Two+Text:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="paper"></div>
+<div class="grid"></div>
+
+<header class="top">
+  <div class="running">Mathematics <span>·</span> <em>Selected Problems</em></div>
+  <div class="hint"><kbd>←</kbd><kbd>→</kbd> <em>pages</em> <span>·</span> <kbd>↓</kbd> <em>reveal solution</em> <span>·</span> <kbd>↑</kbd> <em>hide</em> <span>·</span> <kbd>F</kbd> <em>full screen</em></div>
+</header>
+
+<footer class="bottom">
+  <div class="folio"><span id="cur">1</span><span class="of">of <span id="tot">5</span></span></div>
+  <nav class="progress" id="progress" aria-label="Slides"></nav>
+  <div class="ansdots" id="ansdots" aria-live="polite"></div>
+  <div class="nav">
+    <button id="prev" aria-label="Previous slide"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><path d="M19 12H5M10 7l-5 5 5 5"/></svg></button>
+    <button id="next" aria-label="Next slide"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><path d="M5 12h14M14 7l5 5-5 5"/></svg></button>
+  </div>
+</footer>
+
+<main id="deck">
+
+<!-- TITLE -->
+<section class="slide title" data-title="Title" data-accent="#8a3b2e">
+  <div class="intro">
+    <p class="kicker rv">University course <span>·</span> Workshop</p>
+    <h1 class="h big"><span class="ln"><span>Mathematical</span></span><span class="ln"><span><em>Problems</em></span></span></h1>
+    <p class="sub rv">Eight exercises in calculus, set theory and linear algebra.</p>
+    <ol class="toc rv">
+      <li><i>I.</i><span>Derivatives</span><b></b><u>2</u></li>
+      <li><i>II.</i><span>Sets</span><b></b><u>3</u></li>
+      <li><i>III.</i><span>Integrals</span><b></b><u>4</u></li>
+      <li><i>IV.</i><span>Matrices</span><b></b><u>5</u></li>
+    </ol>
+  </div>
+  <figure class="plate rv" aria-hidden="true">
+    <svg viewBox="0 0 420 420">
+      <g class="axes">
+        <path d="M30 360H400M60 390V20"/>
+        <path d="M394 356l6 4-6 4M56 26l4-6 4 6"/>
+      </g>
+      <g class="ticks"><path d="M110 356v8M160 356v8M210 356v8M260 356v8M310 356v8M360 356v8M56 310h8M56 260h8M56 210h8M56 160h8M56 110h8M56 60h8"/></g>
+      <path class="draw curve" pathLength="1" d="M60 360 Q 185 360 310 60"/>
+      <path class="draw tangent" pathLength="1" d="M128 400 L 372 -20"/>
+      <path class="draw guide" pathLength="1" d="M237 210 V 360 M237 210 H 60"/>
+      <circle class="pt" cx="237" cy="210" r="5"/>
+      <text x="130" y="120" class="lbl"><tspan font-style="italic">y</tspan> = 2<tspan font-style="italic">x</tspan><tspan dy="-9" font-size="13">2</tspan></text>
+      <text x="226" y="384" class="lbl sm"><tspan font-style="italic">x</tspan>₀</text>
+      <text x="384" y="384" class="lbl sm" font-style="italic">x</text>
+      <text x="72" y="30" class="lbl sm" font-style="italic">y</text>
+      <text x="288" y="156" class="lbl sm" font-style="italic">tangent</text>
+    </svg>
+    <figcaption>Fig. 1 — a parabola and its tangent line.</figcaption>
+  </figure>
+</section>
+
+<!-- I · DERIVATIVES -->
+<section class="slide" data-title="Derivatives" data-accent="#2f6b4f">
+  <div class="head">
+    <p class="kicker rv">§ I <span>·</span> Differential calculus</p>
+    <h2 class="h"><span class="ln"><span>Slope and the</span></span> <span class="ln"><span><em>derivative</em></span></span></h2>
+  </div>
+  <div class="pair">
+    <article class="prob rv">
+      <h3><b>Problem 1.</b> <em>Slope of a curve</em></h3>
+      <p class="task">Find the slope of the curve at <span class="m"><i>x</i> = 6</span>.</p>
+      <div class="math"><span class="m"><i>y</i> = 2<i>x</i><sup>2</sup>,&ensp; <i>x</i> = 6</span></div>
+      <div class="ans">
+        <span class="alabel">Solution.</span>
+        <p class="step">The slope is the derivative: <span class="m"><i>y</i>′ = 4<i>x</i></span></p>
+        <p class="step">At <span class="m"><i>x</i> = 6</span>: <span class="m"><i>y</i>′(6) = 4 · 6</span></p>
+        <p class="res"><span class="m">slope = 24</span></p>
+      </div>
+    </article>
+    <article class="prob rv">
+      <h3><b>Problem 2.</b> <em>Derivative</em></h3>
+      <p class="task">Find the derivative of the function.</p>
+      <div class="math"><span class="m">5<i>x</i><sup>5</sup><span class="par">(</span>12<i>x</i><sup>2</sup> + 4<span class="par">)</span></span></div>
+      <div class="ans">
+        <span class="alabel">Solution.</span>
+        <p class="step">Expand first: <span class="m">60<i>x</i><sup>7</sup> + 20<i>x</i><sup>5</sup></span></p>
+        <p class="step">Apply the power rule to each term:</p>
+        <p class="res"><span class="m">420<i>x</i><sup>6</sup> + 100<i>x</i><sup>4</sup></span></p>
+      </div>
+    </article>
+  </div>
+</section>
+
+<!-- II · SETS -->
+<section class="slide" data-title="Sets" data-accent="#9a6420">
+  <div class="head">
+    <p class="kicker rv">§ II <span>·</span> Set theory</p>
+    <h2 class="h"><span class="ln"><span>Set</span></span> <span class="ln"><span><em>notation</em></span></span></h2>
+  </div>
+  <div class="pair">
+    <article class="prob rv">
+      <h3><b>Problem 3.</b> <em>Roster to set-builder</em></h3>
+      <p class="task">Write the set <span class="m"><i>A</i></span> in set-builder notation.</p>
+      <div class="math"><span class="m"><i>A</i> = {2, 4, 6, 8, 10}</span></div>
+      <div class="ans">
+        <span class="alabel">Solution.</span>
+        <p class="step">All elements are the even numbers from 2 to 10:</p>
+        <p class="res"><span class="m"><i>A</i> = {<i>x</i> | <i>x</i> = 2<i>n</i>, <i>n</i> ∈ ℕ, 1 ≤ <i>n</i> ≤ 5}</span></p>
+      </div>
+    </article>
+    <article class="prob rv">
+      <h3><b>Problem 4.</b> <em>Set-builder to roster</em></h3>
+      <p class="task">Write the set <span class="m"><i>B</i></span> in roster form.</p>
+      <div class="math"><span class="m"><i>B</i> = {<i>x</i> ∈ ℤ | −3 &lt; <i>x</i> ≤ 4}</span></div>
+      <div class="ans">
+        <span class="alabel">Solution.</span>
+        <p class="step">The integers greater than −3 and at most 4:</p>
+        <p class="res"><span class="m"><i>B</i> = {−2, −1, 0, 1, 2, 3, 4}</span></p>
+      </div>
+    </article>
+  </div>
+</section>
+
+<!-- III · INTEGRALS -->
+<section class="slide" data-title="Integrals" data-accent="#2a5a8a">
+  <div class="head">
+    <p class="kicker rv">§ III <span>·</span> Integral calculus</p>
+    <h2 class="h"><span class="ln"><span>Find the</span></span> <span class="ln"><span><em>integrals</em></span></span></h2>
+  </div>
+  <div class="pair">
+    <article class="prob rv">
+      <h3><b>Problem 5.</b> <em>Power rule (indefinite)</em></h3>
+      <p class="task">Find the indefinite integral.</p>
+      <div class="math"><span class="m"><span class="int"><span class="sign">∫</span></span>(3<i>x</i><sup>2</sup> − 4<i>x</i> + 5) <i>dx</i></span></div>
+      <div class="ans">
+        <span class="alabel">Solution.</span>
+        <p class="step">Use <span class="m"><span class="int sm"><span class="sign">∫</span></span><i>x</i><sup><i>n</i></sup><i>dx</i> = <span class="frac"><span><i>x</i><sup><i>n</i>+1</sup></span><span><i>n</i>+1</span></span></span> on each term:</p>
+        <p class="res"><span class="m"><i>x</i><sup>3</sup> − 2<i>x</i><sup>2</sup> + 5<i>x</i> + <i>C</i></span></p>
+      </div>
+    </article>
+    <article class="prob rv">
+      <h3><b>Problem 6.</b> <em>Definite integral</em></h3>
+      <p class="task">Evaluate the definite integral.</p>
+      <div class="math"><span class="m"><span class="int"><span class="sign">∫</span><span class="lim"><span>2</span><span>0</span></span></span>(<i>x</i><sup>3</sup> + 2<i>x</i>) <i>dx</i></span></div>
+      <div class="ans">
+        <span class="alabel">Solution.</span>
+        <p class="step">Antiderivative: <span class="m"><span class="frac"><span><i>x</i><sup>4</sup></span><span>4</span></span> + <i>x</i><sup>2</sup></span></p>
+        <p class="step">From 0 to 2: <span class="m">(4 + 4) − (0 + 0)</span></p>
+        <p class="res"><span class="m">= 8</span></p>
+      </div>
+    </article>
+  </div>
+</section>
+
+<!-- IV · MATRICES -->
+<section class="slide" data-title="Matrices" data-accent="#5e4785">
+  <div class="head">
+    <p class="kicker rv">§ IV <span>·</span> Linear algebra</p>
+    <h2 class="h"><span class="ln"><span>Matrix</span></span> <span class="ln"><span><em>operations</em></span></span></h2>
+  </div>
+  <div class="pair">
+    <article class="prob rv">
+      <h3><b>Problem 7.</b> <em>Matrix operations</em></h3>
+      <p class="task">Using <span class="m"><i>A</i></span> and <span class="m"><i>B</i></span>, find (a) <span class="m">2<i>A</i> − <i>B</i></span> and (b) <span class="m"><i>AB</i></span>.</p>
+      <div class="math"><span class="m"><i>A</i> = <span class="mat"><span>2</span><span>1</span><span>3</span><span>4</span></span>,&ensp; <i>B</i> = <span class="mat"><span>1</span><span>−2</span><span>0</span><span>5</span></span></span></div>
+      <div class="ans">
+        <span class="alabel">Solution.</span>
+        <p class="res two"><span class="m">(a)&ensp;2<i>A</i> − <i>B</i> = <span class="mat"><span>3</span><span>4</span><span>6</span><span>3</span></span></span><span class="m">(b)&ensp;<i>AB</i> = <span class="mat"><span>2</span><span>1</span><span>3</span><span>14</span></span></span></p>
+        <p class="step">Each entry of <span class="m"><i>AB</i></span> is a row of <span class="m"><i>A</i></span> times a column of <span class="m"><i>B</i></span>, e.g. <span class="m">3·(−2) + 4·5 = 14</span></p>
+      </div>
+    </article>
+    <article class="prob rv">
+      <h3><b>Problem 8.</b> <em>Determinant (2×2)</em></h3>
+      <p class="task">Find the determinant of <span class="m"><i>M</i></span>.</p>
+      <div class="math"><span class="m"><i>M</i> = <span class="mat"><span>4</span><span>7</span><span>2</span><span>6</span></span></span></div>
+      <div class="ans">
+        <span class="alabel">Solution.</span>
+        <p class="step">For a 2×2 matrix: <span class="m">det = <i>ad</i> − <i>bc</i></span></p>
+        <p class="step"><span class="m">det <i>M</i> = 4·6 − 7·2 = 24 − 14</span></p>
+        <p class="res"><span class="m">det <i>M</i> = 10</span></p>
+      </div>
+    </article>
+  </div>
+</section>
+
+</main>
+
+<script src="main.js"></script>
+</body>
+</html>

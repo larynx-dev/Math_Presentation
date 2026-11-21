@@ -36,12 +36,12 @@
   <div class="intro">
     <p class="kicker rv">University course <span>·</span> Workshop</p>
     <h1 class="h big"><span class="ln"><span>Mathematical</span></span><span class="ln"><span><em>Problems</em></span></span></h1>
-    <p class="sub rv">Eight exercises in calculus, set theory and linear algebra.</p>
+    <p class="sub rv">Eight exercises in set theory, linear algebra and calculus.</p>
     <ol class="toc rv">
-      <li><i>I.</i><span>Derivatives</span><b></b><u>2</u></li>
-      <li><i>II.</i><span>Sets</span><b></b><u>3</u></li>
-      <li><i>III.</i><span>Integrals</span><b></b><u>4</u></li>
-      <li><i>IV.</i><span>Matrices</span><b></b><u>5</u></li>
+      <li><i>I.</i><span>Sets</span><b></b><u>2</u></li>
+      <li><i>II.</i><span>Matrices</span><b></b><u>3</u></li>
+      <li><i>III.</i><span>Derivatives</span><b></b><u>4</u></li>
+      <li><i>IV.</i><span>Integrals</span><b></b><u>5</u></li>
     </ol>
   </div>
   <figure class="plate rv" aria-hidden="true">
@@ -65,15 +65,76 @@
   </figure>
 </section>
 
-<!-- I · DERIVATIVES -->
+<!-- I · SETS -->
+<section class="slide" data-title="Sets" data-accent="#9a6420">
+  <div class="head">
+    <p class="kicker rv">§ I <span>·</span> Set theory</p>
+    <h2 class="h"><span class="ln"><span>Set</span></span> <span class="ln"><span><em>notation</em></span></span></h2>
+  </div>
+  <div class="pair">
+    <article class="prob rv">
+      <h3><b>Problem 1.</b> <em>Roster to set-builder</em></h3>
+      <p class="task">Write the set <span class="m"><i>A</i></span> in set-builder notation.</p>
+      <div class="math"><span class="m"><i>A</i> = {2, 4, 6, 8, 10}</span></div>
+      <div class="ans">
+        <span class="alabel">Solution.</span>
+        <p class="step">All elements are the even numbers from 2 to 10:</p>
+        <p class="res"><span class="m"><i>A</i> = {<i>x</i> | <i>x</i> = 2<i>n</i>, <i>n</i> ∈ ℕ, 1 ≤ <i>n</i> ≤ 5}</span></p>
+      </div>
+    </article>
+    <article class="prob rv">
+      <h3><b>Problem 2.</b> <em>Set-builder to roster</em></h3>
+      <p class="task">Write the set <span class="m"><i>B</i></span> in roster form.</p>
+      <div class="math"><span class="m"><i>B</i> = {<i>x</i> ∈ ℤ | −3 &lt; <i>x</i> ≤ 4}</span></div>
+      <div class="ans">
+        <span class="alabel">Solution.</span>
+        <p class="step">The integers greater than −3 and at most 4:</p>
+        <p class="res"><span class="m"><i>B</i> = {−2, −1, 0, 1, 2, 3, 4}</span></p>
+      </div>
+    </article>
+  </div>
+</section>
+
+<!-- II · MATRICES -->
+<section class="slide" data-title="Matrices" data-accent="#5e4785">
+  <div class="head">
+    <p class="kicker rv">§ II <span>·</span> Linear algebra</p>
+    <h2 class="h"><span class="ln"><span>Matrix</span></span> <span class="ln"><span><em>operations</em></span></span></h2>
+  </div>
+  <div class="pair">
+    <article class="prob rv">
+      <h3><b>Problem 3.</b> <em>Matrix operations</em></h3>
+      <p class="task">Using <span class="m"><i>A</i></span> and <span class="m"><i>B</i></span>, find (a) <span class="m">2<i>A</i> − <i>B</i></span> and (b) <span class="m"><i>AB</i></span>.</p>
+      <div class="math"><span class="m"><i>A</i> = <span class="mat"><span>2</span><span>1</span><span>3</span><span>4</span></span>,&ensp; <i>B</i> = <span class="mat"><span>1</span><span>−2</span><span>0</span><span>5</span></span></span></div>
+      <div class="ans">
+        <span class="alabel">Solution.</span>
+        <p class="res two"><span class="m">(a)&ensp;2<i>A</i> − <i>B</i> = <span class="mat"><span>3</span><span>4</span><span>6</span><span>3</span></span></span><span class="m">(b)&ensp;<i>AB</i> = <span class="mat"><span>2</span><span>1</span><span>3</span><span>14</span></span></span></p>
+        <p class="step">Each entry of <span class="m"><i>AB</i></span> is a row of <span class="m"><i>A</i></span> times a column of <span class="m"><i>B</i></span>, e.g. <span class="m">3·(−2) + 4·5 = 14</span></p>
+      </div>
+    </article>
+    <article class="prob rv">
+      <h3><b>Problem 4.</b> <em>Determinant (2×2)</em></h3>
+      <p class="task">Find the determinant of <span class="m"><i>M</i></span>.</p>
+      <div class="math"><span class="m"><i>M</i> = <span class="mat"><span>4</span><span>7</span><span>2</span><span>6</span></span></span></div>
+      <div class="ans">
+        <span class="alabel">Solution.</span>
+        <p class="step">For a 2×2 matrix: <span class="m">det = <i>ad</i> − <i>bc</i></span></p>
+        <p class="step"><span class="m">det <i>M</i> = 4·6 − 7·2 = 24 − 14</span></p>
+        <p class="res"><span class="m">det <i>M</i> = 10</span></p>
+      </div>
+    </article>
+  </div>
+</section>
+
+<!-- III · DERIVATIVES -->
 <section class="slide" data-title="Derivatives" data-accent="#2f6b4f">
   <div class="head">
-    <p class="kicker rv">§ I <span>·</span> Differential calculus</p>
+    <p class="kicker rv">§ III <span>·</span> Differential calculus</p>
     <h2 class="h"><span class="ln"><span>Slope and the</span></span> <span class="ln"><span><em>derivative</em></span></span></h2>
   </div>
   <div class="pair">
     <article class="prob rv">
-      <h3><b>Problem 1.</b> <em>Slope of a curve</em></h3>
+      <h3><b>Problem 5.</b> <em>Slope of a curve</em></h3>
       <p class="task">Find the slope of the curve at <span class="m"><i>x</i> = 6</span>.</p>
       <div class="math"><span class="m"><i>y</i> = 2<i>x</i><sup>2</sup>,&ensp; <i>x</i> = 6</span></div>
       <div class="ans">
@@ -84,7 +145,7 @@
       </div>
     </article>
     <article class="prob rv">
-      <h3><b>Problem 2.</b> <em>Derivative</em></h3>
+      <h3><b>Problem 6.</b> <em>Derivative</em></h3>
       <p class="task">Find the derivative of the function.</p>
       <div class="math"><span class="m">5<i>x</i><sup>5</sup><span class="par">(</span>12<i>x</i><sup>2</sup> + 4<span class="par">)</span></span></div>
       <div class="ans">
@@ -97,45 +158,15 @@
   </div>
 </section>
 
-<!-- II · SETS -->
-<section class="slide" data-title="Sets" data-accent="#9a6420">
-  <div class="head">
-    <p class="kicker rv">§ II <span>·</span> Set theory</p>
-    <h2 class="h"><span class="ln"><span>Set</span></span> <span class="ln"><span><em>notation</em></span></span></h2>
-  </div>
-  <div class="pair">
-    <article class="prob rv">
-      <h3><b>Problem 3.</b> <em>Roster to set-builder</em></h3>
-      <p class="task">Write the set <span class="m"><i>A</i></span> in set-builder notation.</p>
-      <div class="math"><span class="m"><i>A</i> = {2, 4, 6, 8, 10}</span></div>
-      <div class="ans">
-        <span class="alabel">Solution.</span>
-        <p class="step">All elements are the even numbers from 2 to 10:</p>
-        <p class="res"><span class="m"><i>A</i> = {<i>x</i> | <i>x</i> = 2<i>n</i>, <i>n</i> ∈ ℕ, 1 ≤ <i>n</i> ≤ 5}</span></p>
-      </div>
-    </article>
-    <article class="prob rv">
-      <h3><b>Problem 4.</b> <em>Set-builder to roster</em></h3>
-      <p class="task">Write the set <span class="m"><i>B</i></span> in roster form.</p>
-      <div class="math"><span class="m"><i>B</i> = {<i>x</i> ∈ ℤ | −3 &lt; <i>x</i> ≤ 4}</span></div>
-      <div class="ans">
-        <span class="alabel">Solution.</span>
-        <p class="step">The integers greater than −3 and at most 4:</p>
-        <p class="res"><span class="m"><i>B</i> = {−2, −1, 0, 1, 2, 3, 4}</span></p>
-      </div>
-    </article>
-  </div>
-</section>
-
-<!-- III · INTEGRALS -->
+<!-- IV · INTEGRALS -->
 <section class="slide" data-title="Integrals" data-accent="#2a5a8a">
   <div class="head">
-    <p class="kicker rv">§ III <span>·</span> Integral calculus</p>
+    <p class="kicker rv">§ IV <span>·</span> Integral calculus</p>
     <h2 class="h"><span class="ln"><span>Find the</span></span> <span class="ln"><span><em>integrals</em></span></span></h2>
   </div>
   <div class="pair">
     <article class="prob rv">
-      <h3><b>Problem 5.</b> <em>Power rule (indefinite)</em></h3>
+      <h3><b>Problem 7.</b> <em>Power rule (indefinite)</em></h3>
       <p class="task">Find the indefinite integral.</p>
       <div class="math"><span class="m"><span class="int"><span class="sign">∫</span></span>(3<i>x</i><sup>2</sup> − 4<i>x</i> + 5) <i>dx</i></span></div>
       <div class="ans">
@@ -145,7 +176,7 @@
       </div>
     </article>
     <article class="prob rv">
-      <h3><b>Problem 6.</b> <em>Definite integral</em></h3>
+      <h3><b>Problem 8.</b> <em>Definite integral</em></h3>
       <p class="task">Evaluate the definite integral.</p>
       <div class="math"><span class="m"><span class="int"><span class="sign">∫</span><span class="lim"><span>2</span><span>0</span></span></span>(<i>x</i><sup>3</sup> + 2<i>x</i>) <i>dx</i></span></div>
       <div class="ans">
@@ -153,37 +184,6 @@
         <p class="step">Antiderivative: <span class="m"><span class="frac"><span><i>x</i><sup>4</sup></span><span>4</span></span> + <i>x</i><sup>2</sup></span></p>
         <p class="step">From 0 to 2: <span class="m">(4 + 4) − (0 + 0)</span></p>
         <p class="res"><span class="m">= 8</span></p>
-      </div>
-    </article>
-  </div>
-</section>
-
-<!-- IV · MATRICES -->
-<section class="slide" data-title="Matrices" data-accent="#5e4785">
-  <div class="head">
-    <p class="kicker rv">§ IV <span>·</span> Linear algebra</p>
-    <h2 class="h"><span class="ln"><span>Matrix</span></span> <span class="ln"><span><em>operations</em></span></span></h2>
-  </div>
-  <div class="pair">
-    <article class="prob rv">
-      <h3><b>Problem 7.</b> <em>Matrix operations</em></h3>
-      <p class="task">Using <span class="m"><i>A</i></span> and <span class="m"><i>B</i></span>, find (a) <span class="m">2<i>A</i> − <i>B</i></span> and (b) <span class="m"><i>AB</i></span>.</p>
-      <div class="math"><span class="m"><i>A</i> = <span class="mat"><span>2</span><span>1</span><span>3</span><span>4</span></span>,&ensp; <i>B</i> = <span class="mat"><span>1</span><span>−2</span><span>0</span><span>5</span></span></span></div>
-      <div class="ans">
-        <span class="alabel">Solution.</span>
-        <p class="res two"><span class="m">(a)&ensp;2<i>A</i> − <i>B</i> = <span class="mat"><span>3</span><span>4</span><span>6</span><span>3</span></span></span><span class="m">(b)&ensp;<i>AB</i> = <span class="mat"><span>2</span><span>1</span><span>3</span><span>14</span></span></span></p>
-        <p class="step">Each entry of <span class="m"><i>AB</i></span> is a row of <span class="m"><i>A</i></span> times a column of <span class="m"><i>B</i></span>, e.g. <span class="m">3·(−2) + 4·5 = 14</span></p>
-      </div>
-    </article>
-    <article class="prob rv">
-      <h3><b>Problem 8.</b> <em>Determinant (2×2)</em></h3>
-      <p class="task">Find the determinant of <span class="m"><i>M</i></span>.</p>
-      <div class="math"><span class="m"><i>M</i> = <span class="mat"><span>4</span><span>7</span><span>2</span><span>6</span></span></span></div>
-      <div class="ans">
-        <span class="alabel">Solution.</span>
-        <p class="step">For a 2×2 matrix: <span class="m">det = <i>ad</i> − <i>bc</i></span></p>
-        <p class="step"><span class="m">det <i>M</i> = 4·6 − 7·2 = 24 − 14</span></p>
-        <p class="res"><span class="m">det <i>M</i> = 10</span></p>
       </div>
     </article>
   </div>

@@ -4,7 +4,7 @@
 
 # 📐 Mathematical Problems
 
-### Eight exercises in calculus, set theory and linear algebra: an interactive, textbook-style slide deck
+### Eight exercises in set theory, linear algebra and calculus: an interactive, textbook-style slide deck
 
 *Ivory paper, serif type and a faint graph-paper grid. Two problems per page,<br>with solutions that stay hidden until you press <kbd>↓</kbd>.*
 
@@ -65,14 +65,14 @@ Then press <kbd>F</kbd> for full screen and <kbd>→</kbd> to begin.
 | <kbd>F</kbd> | Toggle full screen |
 | 🖱 Click a problem | Toggle that problem's solution |
 | 👆 Swipe | Next / previous on touch screens |
-| 🔗 `index.html#4` | Open directly on page 4 (works for `#1` – `#5`) |
+| 🔗 `index.html#4` | Open directly on page 4, Derivatives (works for `#1` – `#5`) |
 
 Solutions are hidden again whenever you come back to a page. The two small circles marked *Solutions* in the footer show which ones are currently visible.
 
 <table>
 <tr>
-<td width="50%"><img src="docs/04-integrals.jpg" alt="Integrals page with solutions hidden"></td>
-<td width="50%"><img src="docs/04-integrals-solved.jpg" alt="Integrals page with solutions revealed"></td>
+<td width="50%"><img src="docs/05-integrals.jpg" alt="Integrals page with solutions hidden"></td>
+<td width="50%"><img src="docs/05-integrals-solved.jpg" alt="Integrals page with solutions revealed"></td>
 </tr>
 <tr>
 <td align="center"><b>Before</b>: solutions hidden</td>
@@ -89,10 +89,10 @@ Each problem page holds the **two problems from one source picture**, with only 
 | # | Page | Colour | Problems |
 |:-:|---|:-:|---|
 | 1 | **Mathematical *Problems*** | ![oxblood](https://img.shields.io/badge/-oxblood-8a3b2e?style=flat-square) | Title page, table of contents, Fig. 1 |
-| 2 | **§ I · Slope and the *derivative*** | ![green](https://img.shields.io/badge/-green-2f6b4f?style=flat-square) | **1.** Slope of `y = 2x²` at `x = 6` · **2.** Derivative of `5x⁵(12x² + 4)` |
-| 3 | **§ II · Set *notation*** | ![ochre](https://img.shields.io/badge/-ochre-9a6420?style=flat-square) | **3.** `A = {2, 4, 6, 8, 10}` in set-builder notation · **4.** `B = {x ∈ ℤ \| −3 < x ≤ 4}` in roster form |
-| 4 | **§ III · Find the *integrals*** | ![blue](https://img.shields.io/badge/-blue-2a5a8a?style=flat-square) | **5.** `∫(3x² − 4x + 5) dx` · **6.** `∫₀² (x³ + 2x) dx` |
-| 5 | **§ IV · Matrix *operations*** | ![violet](https://img.shields.io/badge/-violet-5e4785?style=flat-square) | **7.** `2A − B` and `AB` · **8.** Determinant of `M` |
+| 2 | **§ I · Set *notation*** | ![ochre](https://img.shields.io/badge/-ochre-9a6420?style=flat-square) | **1.** `A = {2, 4, 6, 8, 10}` in set-builder notation · **2.** `B = {x ∈ ℤ \| −3 < x ≤ 4}` in roster form |
+| 3 | **§ II · Matrix *operations*** | ![violet](https://img.shields.io/badge/-violet-5e4785?style=flat-square) | **3.** `2A − B` and `AB` · **4.** Determinant of `M` |
+| 4 | **§ III · Slope and the *derivative*** | ![green](https://img.shields.io/badge/-green-2f6b4f?style=flat-square) | **5.** Slope of `y = 2x²` at `x = 6` · **6.** Derivative of `5x⁵(12x² + 4)` |
+| 5 | **§ IV · Find the *integrals*** | ![blue](https://img.shields.io/badge/-blue-2a5a8a?style=flat-square) | **7.** `∫(3x² − 4x + 5) dx` · **8.** `∫₀² (x³ + 2x) dx` |
 
 <details>
 <summary><b>📸 All pages</b></summary>
@@ -100,12 +100,12 @@ Each problem page holds the **two problems from one source picture**, with only 
 
 | | |
 |:-:|:-:|
-| <img src="docs/02-derivatives.jpg" alt="Derivatives page"> | <img src="docs/02-derivatives-solved.jpg" alt="Derivatives page, solved"> |
-| **2 · Derivatives** | **2 · Derivatives, solved** |
-| <img src="docs/03-sets.jpg" alt="Sets page"> | <img src="docs/03-sets-solved.jpg" alt="Sets page, solved"> |
-| **3 · Sets** | **3 · Sets, solved** |
-| <img src="docs/05-matrices.jpg" alt="Matrices page"> | <img src="docs/05-matrices-solved.jpg" alt="Matrices page, solved"> |
-| **5 · Matrices** | **5 · Matrices, solved** |
+| <img src="docs/02-sets.jpg" alt="Sets page"> | <img src="docs/02-sets-solved.jpg" alt="Sets page, solved"> |
+| **2 · Sets** | **2 · Sets, solved** |
+| <img src="docs/03-matrices.jpg" alt="Matrices page"> | <img src="docs/03-matrices-solved.jpg" alt="Matrices page, solved"> |
+| **3 · Matrices** | **3 · Matrices, solved** |
+| <img src="docs/04-derivatives.jpg" alt="Derivatives page"> | <img src="docs/04-derivatives-solved.jpg" alt="Derivatives page, solved"> |
+| **4 · Derivatives** | **4 · Derivatives, solved** |
 
 </details>
 
@@ -115,14 +115,14 @@ Each problem page holds the **two problems from one source picture**, with only 
 
 | # | Problem | Answer |
 |:-:|---|---|
-| 1 | Slope of `y = 2x²` at `x = 6` | `y′ = 4x`, so the slope is **24** |
-| 2 | `d/dx [5x⁵(12x² + 4)]` | `60x⁷ + 20x⁵` → **`420x⁶ + 100x⁴`** |
-| 3 | `A = {2, 4, 6, 8, 10}` | **`A = {x \| x = 2n, n ∈ ℕ, 1 ≤ n ≤ 5}`** |
-| 4 | `B = {x ∈ ℤ \| −3 < x ≤ 4}` | **`B = {−2, −1, 0, 1, 2, 3, 4}`** |
-| 5 | `∫(3x² − 4x + 5) dx` | **`x³ − 2x² + 5x + C`** |
-| 6 | `∫₀² (x³ + 2x) dx` | `[x⁴/4 + x²]₀² = (4 + 4) − 0` = **8** |
-| 7 | `2A − B`, `AB` | **`2A − B = (3 4; 6 3)`**, **`AB = (2 1; 3 14)`** |
-| 8 | `det M`, `M = (4 7; 2 6)` | `4·6 − 7·2` = **10** |
+| 1 | `A = {2, 4, 6, 8, 10}` | **`A = {x \| x = 2n, n ∈ ℕ, 1 ≤ n ≤ 5}`** |
+| 2 | `B = {x ∈ ℤ \| −3 < x ≤ 4}` | **`B = {−2, −1, 0, 1, 2, 3, 4}`** |
+| 3 | `2A − B`, `AB` | **`2A − B = (3 4; 6 3)`**, **`AB = (2 1; 3 14)`** |
+| 4 | `det M`, `M = (4 7; 2 6)` | `4·6 − 7·2` = **10** |
+| 5 | Slope of `y = 2x²` at `x = 6` | `y′ = 4x`, so the slope is **24** |
+| 6 | `d/dx [5x⁵(12x² + 4)]` | `60x⁷ + 20x⁵` → **`420x⁶ + 100x⁴`** |
+| 7 | `∫(3x² − 4x + 5) dx` | **`x³ − 2x² + 5x + C`** |
+| 8 | `∫₀² (x³ + 2x) dx` | `[x⁴/4 + x²]₀² = (4 + 4) − 0` = **8** |
 
 </details>
 

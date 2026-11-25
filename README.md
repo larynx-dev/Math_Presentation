@@ -29,7 +29,7 @@
 | 📜 | **Classical textbook look** | Warm paper, a graph-paper grid, thin rules and serif type. Problems are set like a textbook: **Problem 1.** in small caps, then the task, the formula and an italic *Solution.* |
 | 🙈 | **Solutions hidden by default** | Each problem keeps a reserved solution box. Press <kbd>↓</kbd> to reveal the solutions one at a time and <kbd>↑</kbd> to hide them again. Nothing else on the page moves. |
 | 🎨 | **One ink colour per page** | Oxblood, green, ochre, blue and violet. The paper, grid, rules and text are all tinted by the page's colour, and the whole page fades smoothly to the next colour when you turn the page. |
-| ∫ | **Math without a library** | Powers, integral signs with limits, fractions and matrices in round brackets are all built with plain HTML and CSS on the *STIX Two* math font. No KaTeX, no MathJax. |
+| ∫ | **Math without a library** | Powers, integral signs, fractions and matrices in round brackets are all built with plain HTML and CSS on the *STIX Two* math font. No KaTeX, no MathJax. |
 | 📈 | **Self-drawing figure** | The title page has a "Fig. 1" plate: the parabola `y = 2x²` and its tangent line draw themselves in when the page opens. |
 | 🪶 | **Three small files** | `index.html`, `style.css` and `main.js` (about 90 lines). No framework, no bundler, no server. |
 
@@ -92,7 +92,7 @@ Each problem page holds the **two problems from one source picture**, with only 
 | 2 | **§ I · Set *notation*** | ![ochre](https://img.shields.io/badge/-ochre-9a6420?style=flat-square) | **1.** `A = {2, 4, 6, 8, 10}` in set-builder notation · **2.** `B = {x ∈ ℤ \| −3 < x ≤ 4}` in roster form |
 | 3 | **§ II · Matrix *operations*** | ![violet](https://img.shields.io/badge/-violet-5e4785?style=flat-square) | **3.** `2A − B` and `AB` · **4.** Determinant of `M` |
 | 4 | **§ III · Slope and the *derivative*** | ![green](https://img.shields.io/badge/-green-2f6b4f?style=flat-square) | **5.** Slope of `y = 2x²` at `x = 6` · **6.** Derivative of `5x⁵(12x² + 4)` |
-| 5 | **§ IV · Find the *integrals*** | ![blue](https://img.shields.io/badge/-blue-2a5a8a?style=flat-square) | **7.** `∫(3x² − 4x + 5) dx` · **8.** `∫₀² (x³ + 2x) dx` |
+| 5 | **§ IV · Find the *integrals*** | ![blue](https://img.shields.io/badge/-blue-2a5a8a?style=flat-square) | **7.** `∫(3x² − 4x + 5) dx` · **8.** `∫4x dx` |
 
 <details>
 <summary><b>📸 All pages</b></summary>
@@ -122,7 +122,7 @@ Each problem page holds the **two problems from one source picture**, with only 
 | 5 | Slope of `y = 2x²` at `x = 6` | `y′ = 4x`, so the slope is **24** |
 | 6 | `d/dx [5x⁵(12x² + 4)]` | `60x⁷ + 20x⁵` → **`420x⁶ + 100x⁴`** |
 | 7 | `∫(3x² − 4x + 5) dx` | **`x³ − 2x² + 5x + C`** |
-| 8 | `∫₀² (x³ + 2x) dx` | `[x⁴/4 + x²]₀² = (4 + 4) − 0` = **8** |
+| 8 | `∫4x dx` | `4 · x²/2 + C` = **`2x² + C`** |
 
 </details>
 
